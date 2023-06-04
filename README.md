@@ -1,4 +1,4 @@
-# Python Linting
+# Openapi Specification Linter
 
 ## Spectral OAS
 
