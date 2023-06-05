@@ -28,13 +28,20 @@ class test_python_oas_validator(unittest.TestCase):
         validation_errors = []
         show_detailed_messages = False
         result = validate_local_spec(spec_file_path, validation_errors, show_detailed_messages)
-        self.assertTrue(result)
+        self.assertTrue(len(result) == 0)
+
+    def test_validate_local_spec_valid_json_file(self):
+        spec_file_path = "resources/oas_/spec.json"
+        validation_errors = []
+        show_detailed_messages = False
+        result = validate_local_spec(spec_file_path, validation_errors, show_detailed_messages)
+        self.assertTrue(len(result) == 0)
 
     def test_validate_local_spec_invalid_yaml_file(self):
         local_spec_file = "resources/oas_/spec_error.yaml"
         show_detailed_messages = False
         result = validate_local_spec(local_spec_file, [], show_detailed_messages)
-        self.assertFalse(result)
+        self.assertTrue(len(result) > 0)
 
     def test_validate_local_spec_invalid_file_extension_yaml(self):
         spec_file_path = "resources/oas_/spec.txt"
