@@ -1,0 +1,15 @@
+# Compiled Python files
+*.pyc
+__pycache__/
+
+# Logs
+*.log
+
+# macOS directory attributes
+.DS_Store
+
+# PyCharm
+.idea/
+
+# Virtual environment
+venv/
